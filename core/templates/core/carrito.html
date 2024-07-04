@@ -1,0 +1,76 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+
+<div class="container" style= "border-radius: 10px;">
+    <div class="contanier-fluid bg-white py-4 pt-4" style="border-radius: 10px; padding: 20px;">
+        <p class="ficha_titulo" >Mi carrito de compras</p>
+        <section class="text-center">
+            <table id="tabla-principal" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"> ID </th>
+                        <th scope="col"> Categoría </th>
+                        <th scope="col"> Producto </th>
+                        <th scope="col"> Precio </th>
+                        <th scope="col"> % Descto <br> Subscriptor </th>
+                        <th scope="col"> % Descto <br> Oferta </th>
+                        <th scope="col"> % Descto <br> Total </th>
+                        <th scope="col" class="text-end"> Descuentos </th>
+                        <th scope="col" class="text-end"> Precio a pagar </th>
+                        <th scope="col"> Opciones </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in detalle_carrito %}
+                    <tr>
+                        <td> {{ item.id }} </td>
+                        <td> {{ item.producto.categoria.nombre }} </td>
+                        <td> {{ item.producto.nombre }} </td>
+                        <td> {{ item.precio|formatear_dinero }} </td>
+                        <td> {{ item.descuento_subscriptor|formatear_porcentaje }} </td>
+                        <td> {{ item.descuento_oferta|formatear_porcentaje }} </td>
+                        <td> {{ item.descuento_total|formatear_porcentaje }} </td>
+                        <td class="text-end"> {{ item.descuentos|formatear_dinero }} </td>
+                        <td class="text-end"> {{ item.precio_a_pagar|formatear_dinero }} </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="{% url 'ficha' item.producto.id %}" class="btn btn-sm btn-primary"> Detalle </a> 
+                                <a href="{% url 'eliminar_producto_en_carrito' item.id %}" class="btn btn-sm btn-danger"> Eliminar </a> 
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div style="padding: 10px;">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="padding-bottom: 20px; padding-right: 20px;">
+                    <label for="Precio-sin-iva" style="font-weight: bold;">Precio sin iva: </label>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="Precio-sin-iva" placeholder="{{ monto_sin_iva|formatear_dinero }}" disabled>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="padding-bottom: 20px; padding-right: 20px;">
+                    <label for="Valor-iva" style="font-weight: bold;">Valor iva: </label>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="Valor-iva" placeholder="{{ iva|formatear_dinero }}" disabled>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="padding-bottom: 20px; padding-right: 20px;">
+                    <label for="Total-pagar" style="font-weight: bold;">Total a pagar: </label>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="Total-pagar" placeholder="{{ total_a_pagar|formatear_dinero }}" disabled>
+                    </div> 
+                </div>   
+            </div>    
+            <div class="text-center">
+                <a href="{% url 'vaciar_carrito' %}" class="btn btn-danger"> Vaciar carrito </a>
+                <a href="#" class="btn btn-primary"> Continuar al pago </a>
+            </div>
+        </section>
+    </div>
+</div>
+    
+{% endblock content %}

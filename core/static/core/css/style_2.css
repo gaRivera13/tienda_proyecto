@@ -1,0 +1,180 @@
+
+
+body{
+  background-color: rgba(96, 4, 139, 0.822);
+}
+
+h1 {
+  color: beige
+}
+
+.index_oferta {
+  color: red;
+}
+.index_precio {
+  color: purple;
+}
+.index_bodega{
+  color: rgb(37, 168, 37);
+}
+.index_stock{
+  color: purple;
+}
+
+.carrito_img{
+  margin-left: 30px;
+  max-width: 50px;
+}
+
+.icono_check{
+  margin-right: 30px;
+  max-width: 50px;
+}
+.icono_espera{
+  margin-right: 30px;
+  max-width: 50px;
+}
+
+.texto_boleta{
+  font-size: 15px;
+}
+
+.nosotros{
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+}
+.in-flex{
+  flex: 1;
+  padding: 25px;
+  margin: 20px;
+}
+
+.texto_nosotros{
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: justify;
+}
+
+.tarjeta_persona{
+  padding: 20px;
+}
+
+.form-label-1{
+  font-weight: bold;
+}
+
+/* para las paginas registro y mis datos */
+.foto_img{
+  max-width: 200px;
+  margin-left: 50px;
+}
+
+input[type="text"], input[type="correo"], input[type="password"], textarea{
+  border-width: 3px !important;
+  font-family: "Roboto", sans-serif;
+
+}
+.boton-pag-datos{
+  width: 120px;
+}
+
+
+/* Estilos mati */
+
+.nav-link {
+  /* Cambia la fuente del nav bar por una menos generica */
+  font-family: "Roboto", sans-serif;
+  color: beige
+}
+
+.ficha_titulo {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.ficha_tecnica{
+  color: black;
+}
+
+.ficha_disponible {
+  font-family: "Roboto", sans-serif;
+  margin-left: 15px;
+  color: green;
+}
+
+.ficha_precio {
+  font-family: "Roboto", sans-serif;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+.ficha_precio_r {
+  font-family: "Roboto", sans-serif;
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.ficha_style {
+  font-family: "Roboto", sans-serif;
+  margin-left: 15px;
+}
+
+.card-img-top-1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 380px;
+  display: block;
+  
+  
+}
+
+
+/* estilos ingresar kenny */
+
+.form-control:focus {
+  border-color: #cf8cca; /* Cambiar color de la línea cuando el campo está enfocado */
+  box-shadow: none; /* Eliminar sombra del enfoque */
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #7e2aa5; /* Línea debajo del campo */
+  border-radius: 9px;
+}
+
+.form-control::placeholder{
+  text-align: center;
+
+}
+
+.card-1-1{
+  background: linear-gradient(135deg, #ffffff, #ffffff); /* Gradiente de colores */
+  color: white; /* Color del texto */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5); /* Sombra */
+  max-width: 500px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar horizontalmente */
+  padding: 20px; /* Espaciado interno */
+}
+
+.error {
+  color: red;
+}
+
+.detalle-boleta {
+  display: flex;
+  align-items: center;
+}
+
+.iconos-check-espera {
+  margin-left: auto;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.iconos-check-espera img {
+  margin-bottom: 10px;
+}

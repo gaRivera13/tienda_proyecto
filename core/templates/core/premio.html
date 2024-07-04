@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+
+<div class="contanier-fluid bg-white py-4 pt-4" style="border-radius: 10px; text-align: center; width: 80%; margin: auto;">
+  <p class="ficha_titulo">
+    ¡Concursa por una gran variedad de productos!
+    <br>
+    Por compras superiores a $20.000 ya estas participando.
+  </p>
+</div>
+<div class="container">
+  <div id="lista" class="row py-4 " style="text-align: center; "></div>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'core/js/premio.js' %}"></script>  
+{% endblock script %}

@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+
+<form method="post" id="formulario-ficha">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card mb-3">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="/media/{{imagen}}" class="card-img-top-1" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h1 class="ficha_tecnica">Ficha de Producto:</h1>
+                        <p class="ficha_titulo">{{nombre}}</p>
+                        <p class="ficha_disponible">{{html_estado|safe}}</p>
+                        <p class="ficha_disponible">{{html_stock|safe}}</p>
+                        <p class="ficha_precio_r">
+                            <b> Precio: {{html_precio|safe}}</b>
+                        </p>
+                        <p class="ficha_style">Descripción:</p>
+                        <p class="ficha_style" style="color: purple">{{descripcion}}</p>
+                        <div>
+                            <input type="hidden" id="accion">
+                            <a href="{% url 'comprar_ahora' %}" class="btn btn-primary ancho-160px">
+                                Comprar ahora
+                            </a>
+                            <a href="{% url 'agregar_producto_al_carrito' id %}" class="btn btn-secondary ancho-160px">
+                                Agregar al carrito
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static 'core/js/ficha.js' %}"></script>
+{% endblock script %}

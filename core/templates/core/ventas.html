@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<div class="container">
+    <div class="contanier-fluid bg-white py-4 pt-4" style="border-radius: 10px">
+        <p class="ficha_titulo">Historial de ventas</p>
+        <section class="text-center">
+            <table id="tabla-principal" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"> Nro boleta </th>
+                        <th scope="col"> Cliente </th>
+                        <th scope="col"> Venta </th>
+                        <th scope="col"> Despacho </th>
+                        <th scope="col"> Entrega </th>
+                        <th scope="col"> Subscrito </th>
+                        <th scope="col"> Monto total </th>
+                        <th scope="col"> Estado actual </th>
+                        <th scope="col"> Detalle </th>
+                        <th scope="col"> Cambiar estado </th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    {% for boleta in historial %}
+                        {% if boleta.estado == 'Anulado' %}
+                            <tr class="letra-boleta-anulada"> 
+                        {% else %}
+                            <tr>
+                        {% endif %}
+                        <th scope="row">{{ boleta.nro_boleta }}</th>
+                        <td>{{ boleta.nom_cliente }}</td>
+                        <td>{{ boleta.fecha_venta|formatear_fecha }}</td>
+                        <td>{{ boleta.fecha_despacho|formatear_fecha }}</td>
+                        <td>{{ boleta.fecha_entrega|formatear_fecha}}</td>
+                        <td>{{ boleta.suscrito }}</td>
+                        <td>{{ boleta.total_a_pagar|formatear_dinero }}</td>
+                        <td>{{ boleta.estado }}</td>
+                        <td>
+                            <a href="{% url 'boleta' boleta.nro_boleta %}" class="btn btn-sm btn-primary">Detalle</a>
+                        </td>
+                        <td>
+                            <span>
+                                <div class="btn-group">
+                                        <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Anulado' %}" class="btn btn-sm btn-danger">Anular</a>
+                                        <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Vendido' %}" class="btn btn-sm btn-success">Vender</a>
+                                        <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Despachado' %}" class="btn btn-sm btn-primary">Despachar</a>
+                                        <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Entregado' %}" class="btn btn-sm btn-secondary">Entregar</a>
+                                    </div>
+                                </span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>       
+            </table>
+        </section>
+    </div>
+</div>
+    
+<!-- <div class="instrucciones-para-el-alumno">
+    INSTRUCCIONES PARA EL ALUMNO (ELIMINALO DESPUES DE LEERLO):<br>
+    - Construye tu tabla de historial de ventas, pero puedes usar los campos sugeridos. <br>
+  </div> -->
+
+
+
+
+
+{% endblock content %}

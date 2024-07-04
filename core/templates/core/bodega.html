@@ -1,0 +1,75 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<div class="container">
+    <section>
+        <form id="form" method="POST">
+            <div  class="contanier-fluid bg-white py-4 pt-4 justify-content-center"style="padding: 50px; border-radius: 10px">
+                <p class="ficha_titulo">Bodega</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        {% csrf_token %}
+                        {{ form|as_bootstrap_form }}
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
+                    </div>
+                    <div class="py-4 pt-4" style="margin-left: 1px;">
+                        {% if productos %}
+                        <table id="tabla-principal" class="table table-hover">
+                            <thead><!-- AREA DE TITULOS DE LA TABLA -->
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Categoría</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col"> Opciones </th>
+                                    <th scope="col"> Imagen </th>  
+                                </tr>
+                            </thead>
+                            <tbody><!-- AREA DE FILAS DE PRODUCTOS -->
+                                {% for producto in productos %}
+                                <tr>
+                                    <td>{{ producto.bodega_id }}</td>
+                                    <td>{{ producto.nombre_categoria}}</td>
+                                    <td>{{ producto.nombre_producto }}</td>
+                                    <td>{{ producto.estado }}</td>
+                                    <!-- Botón de eliminar producto de bodega, se activa sólo para productos no vendidos -->
+                                    <td>
+                                        {% if producto.estado == 'En bodega' %}
+                                        <a href="{% url 'eliminar_producto_en_bodega' producto.bodega_id %}" 
+                                        class="btn btn-danger btn-sm"> Eliminar </a>
+                                        {% else %}
+                                        <a href="{% url 'eliminar_producto_en_bodega' producto.bodega_id %}" 
+                                        class="btn btn-primary btn-sm disabled"> Eliminar </a>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <img src="/media/{{ producto.imagen }}" class="producto-sm" alt="">
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+    <!-- 
+        AREA DE DATOS BASICOS: combobox de categoría, combobox de producto y cantidad.
+        El Combobox de Producto se carga dependiendo del valor el Combobox de Categoría,
+        para ello se usa jquery y ajax.
+        (VER COMENTARIO "COMBOBOX DEPENDIENTES PARA CATEGORIA Y PRODUCTO" en bodega.js)-->
+    <!-- AREA DE TABLA DE PRODUCTOS -->
+
+{% endblock content %}
+
+{% block script %}
+    <input type="hidden" id="url_obtener_productos" value="{% url 'obtener_productos' %}">
+    <script src="{% static 'core/js/bodega.js' %}"></script>
+{% endblock script %}

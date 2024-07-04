@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+
+<!-- <div class="instrucciones-para-el-alumno">
+  INSTRUCCIONES PARA EL ALUMNO (ELIMINALO DESPUES DE LEERLO):<br>
+  - Pagina para ingresar a la tienda <br>
+  - Pone aquí tu formulario <br>
+  - Si quieres puedes usar el formulario que se te entrega, pero debes cambiar su gráfica con la tuya <br>
+  - Si quieres mantener tu propio formulario, debes fijarte que tenga los "id" y "name" del formulario de Django <br>
+  - Por ejemplo, si tu campo se llama "username", debes usar los atributos <b>name="username"</b> y <b>id="id_username"</b> (Django le antepone "id_" al nombre del campo)
+</div> -->
+  <div class="container mt-5 ">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div>
+          <img src="{% static 'core/img/logo_xv_lg.png' %}" alt="" >
+        </div>
+        <div class="container bg-white" style="border-radius:  10px;">
+          <section>
+            <form id="form" method="POST" class=" border-3 p-4">
+              {% csrf_token %} 
+              {{ form|as_bootstrap_form }}
+
+              <!-- Botones -->
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary"> Ingresar </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Combobox de usuarios (QUITAR EN VERSION DE PRODUCCION DEL SOFTWARE) -->
+  <!-- NO LO BORRES PARA QUE PUEDAS HACER TUS PRUEBAS MAS RAPIDAMENTE  -->
+  {% include 'common/combobox_usuarios.html' %}
+  
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'core/js/ingresar.js' %}"></script>
+{% endblock script %}
+              <!-- <p class="ficha_titulo" style="text-align: center;">Iniciar Sesión </p>
+              <div class="mb-5 fw-bold">
+                <label for="id_username" style="text-align: left;">Cuenta</label>
+                <input type="text" class="form-control" id="id_username" name="username" placeholder="Ingrese nombre de usuario" value=""/>                   
+              </div>
+              <div class="mb-5 fw-bold">
+                <label for="id_password" style="text-align: left;">Contraseña</label>
+                <input type="password" class="form-control" id="id_password" name="password" placeholder="Ingrese su Contraseña" value=""/>
+              </div> -->
