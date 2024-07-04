@@ -20,14 +20,15 @@
                     <div class="card-body">
                         <h1 class="ficha_tecnica">Ficha de Producto:</h1>
                         <p class="ficha_titulo">{{nombre}}</p>
-                        <p class="ficha_disponible">{{html_estado|safe}}</p>
-                        <p class="ficha_disponible">{{html_stock|safe}}</p>
+                        <p class="ficha_disponible" style="font-weight: bold;" >{{html_estado|safe}}</p>
+                        <p class="ficha_disponible" style="font-weight: bold;">{{html_stock|safe}}</p>
                         <p class="ficha_precio_r">
                             <b> Precio: {{html_precio|safe}}</b>
                         </p>
-                        <p class="ficha_style">Descripción:</p>
+                        <p class="ficha_style" style="font-weight: bold;">Descripción:</p>
                         <p class="ficha_style" style="color: purple">{{descripcion}}</p>
                         <div>
+
                             <input type="hidden" id="accion">
                             <a href="{% url 'comprar_ahora' %}" class="btn btn-primary ancho-160px">
                                 Comprar ahora

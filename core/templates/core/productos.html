@@ -3,49 +3,55 @@
 {% load custom_filters %}
 
 {% block content %}
-<div class="container">
+<div class="container" style="text-align: center; margin-right: 1px;">
   <section>
     <form id="form" method="POST" enctype="multipart/form-data" class="d-flex flex-wrap">
-      <!-- Columna del formulario -->
-      <div class="col-md-6">
-        <div class="container-fluid bg-white py-4 pt-4" style="border-radius: 30px; ">
-          <p class="ficha_titulo">Mantenedor de Productos</p>
-          {% csrf_token %}
-          <div style="margin-left: 10px;">
-            {{ form.categoria|as_bootstrap_field }} <br>
-            {{ form.nombre|as_bootstrap_field }}<br>
-            {{ form.descripcion|as_bootstrap_field }}<br>
-            {{ form.precio|as_bootstrap_field }}<br>
-            <fieldset class="border-4 p-2" style="border-radius: 10px;">
-              <legend>Porcentaje descuentos</legend>
-              {{ form.descuento_subscriptor|as_bootstrap_field }}<br>
-              {{ form.descuento_oferta|as_bootstrap_field }}<br>
-            </fieldset>
+      <div class="row">
+        <!-- Columna del formulario -->
+         <div class="col-md-6">
+          <div class="container-fluid bg-white py-4 pt-4" style="border-radius: 30px; ">
+            <p class="ficha_titulo">Mantenedor de Productos</p>
+            {% csrf_token %}
+            <div  class="container" style="margin-left: 10px; font-weight: bold;">
+              {{ form.categoria|as_bootstrap_field }} <br>
+              {{ form.nombre|as_bootstrap_field }}<br>
+              {{ form.descripcion|as_bootstrap_field }}<br>
+              {{ form.precio|as_bootstrap_field }}<br>
+              <fieldset class="border-4 p-2" style="border-radius: 10px; font-weight: bold;">
+                <legend>Porcentaje descuentos</legend>
+                {{ form.descuento_subscriptor|as_bootstrap_field }}<br>
+                {{ form.descuento_oferta|as_bootstrap_field }}<br>
+              </fieldset>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Columna de la imagen -->
-      <div class=" container bg-white col-md-6 d-flex justify-content-center" style="border-radius: 30px; padding: 50px;">
-        <div class="row">
-          <!-- AREA DE CUADRO DE IMAGEN -->
-          <div class="col-sm-12 text-center" >
-            {% if form.imagen.value %}
-            <img id="cuadro-imagen" src="/media/{{ form.imagen.value }}" class="img-fluid">
-            {% else %}
-            <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" class="img-fluid">
-            {% endif %}
-            {{ form.imagen|as_bootstrap_field }}
-          </div>
-          <!-- AREA DE BOTONES -->
-          <div class="col-sm-12 text-center">
-            <div class="d-grid gap-2 d-md-block mt-4">
-              <input type="submit" class="btn btn-primary" value="Guardar">
-              <a class="btn btn-primary" href="{% url 'productos' 'crear' '0' %}"> Nuevo </a>
-              <a type="submit" class="btn btn-primary" href="{% url 'productos' 'eliminar' form.instance.id %}">Eliminar</a>
-              <button class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('id_imagen').click();"> Seleccionar imagen </button>
-              {% if form.instance.id %}
-              <a class="btn btn-primary" href="{% url 'productos' 'eliminar' form.instance.id %}"> Eliminar </a>
-              {% endif %}
+        <!-- Columna de la imagen -->
+         <div class="col-md-6" >
+          <div class=" container bg-white py-4" style="border-radius: 30px; padding: 20px;">
+            <div class="row">
+              <!-- AREA DE CUADRO DE IMAGEN -->
+              <div class="col-sm-12 text-center" >
+                {% if form.imagen.value %}
+                <img id="cuadro-imagen" src="/media/{{ form.imagen.value }}" class="img-fluid">
+                {% else %}
+                <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" class="img-fluid">
+                {% endif %}
+                {{ form.imagen|as_bootstrap_field }}
+              </div>
+              <!-- AREA DE BOTONES -->
+              <div class="col-sm-12 text-center  mt-4">
+                <div class="d-grid gap-2 d-md-block">
+                  <input type="submit" class="btn btn-primary" value="Guardar">
+                  <a class="btn btn-primary" href="{% url 'productos' 'crear' '0' %}"> Nuevo </a>
+                  <!-- <a type="submit" class="btn btn-primary" href="{% url 'productos' 'eliminar' form.instance.id %}">Eliminar</a> -->
+                  {% if form.instance.id %}
+                  <a class="btn btn-primary" href="{% url 'productos' 'eliminar' form.instance.id %}"> Eliminar </a>
+                  {% endif %} 
+                  <div class="container" style="padding-top: 10px;">
+                    <button class="btn btn-primary" onclick="event.preventDefault(); document.getElementById('id_imagen').click();"> Seleccionar imagen </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

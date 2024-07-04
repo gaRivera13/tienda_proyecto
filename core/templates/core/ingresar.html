@@ -12,20 +12,20 @@
   - Si quieres mantener tu propio formulario, debes fijarte que tenga los "id" y "name" del formulario de Django <br>
   - Por ejemplo, si tu campo se llama "username", debes usar los atributos <b>name="username"</b> y <b>id="id_username"</b> (Django le antepone "id_" al nombre del campo)
 </div> -->
-  <div class="container mt-5 ">
+  <div class="container mt-3" style="padding: 50px ">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div>
           <img src="{% static 'core/img/logo_xv_lg.png' %}" alt="" >
         </div>
-        <div class="container bg-white" style="border-radius:  10px;">
+        <div class="container bg-white" style="border-radius:  10px; padding: 30px">
           <section>
-            <form id="form" method="POST" class=" border-3 p-4">
+            <form id="form" method="POST" class=" border-3 p-4" style="font-weight: bold;">
               {% csrf_token %} 
               {{ form|as_bootstrap_form }}
 
               <!-- Botones -->
-              <div class="text-center mt-4">
+              <div class="text-center mt-4" style="padding: 10px;">
                 <button type="submit" class="btn btn-primary"> Ingresar </button>
               </div>
             </form>

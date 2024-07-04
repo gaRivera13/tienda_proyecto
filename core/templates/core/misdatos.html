@@ -5,16 +5,16 @@
 {% block content %}
     
   <form id="form" method="POST" enctype="multipart/form-data">
-    <div class="contanier-fluid bg-white py-4 pt-4" style="border-radius: 10px; padding: 20px;">
+    <div class="contanier-fluid bg-white py-4 pt-4" style="border-radius: 10px; padding: 50px;">
       <p class="ficha_titulo" >Mis datos</p>
       {% csrf_token %}
       <div class="row">
         <!-- AREA DE DATOS BASICOS: username, nombre, apellidos, correo y contraseñas -->
-        <div class="col-sm-12 col-md-4" style="border-radius: 10px; padding: 20px;">
+        <div class="col-sm-12 col-md-4" style="border-radius: 10px; padding: 30px; font-weight: bold;">
           {{ form_usuario|as_bootstrap_form:'help_text_visible=False' }}
         </div>
         <!-- AREA DE DATOS DE PERFIL: rut, dirección y subscrito (VER COMENTARIO "CHECKBOX SUBSCRITO" en script.js)  -->
-        <div class="col-sm-12 col-md-5" style=" padding: 20px;">
+        <div class="col-sm-12 col-md-5" style=" padding: 30px; font-weight: bold;">
           {{ form_perfil|as_bootstrap_form }}
         </div>
         <!-- AREA DE IMAGEN DE PERFIL -->
@@ -23,7 +23,9 @@
             <!-- AREA DE CUADRO DE IMAGEN: Muestra la Imagen de perfil -->
              <!-- preguntarle al profe sobre como poner una imagen -->
             <div class="col-sm-12" style="height: 220px">
-              <img id="cuadro-imagen" src="/media/{{imagen}}" class="foto_img" >
+              {% if form_perfil.instance.imagen %}
+              <img id="cuadro-imagen" src="{{ form_perfil.instance.imagen.url }}" class="foto_img">
+            {% endif %}
             </div>
           </div>
         </div>

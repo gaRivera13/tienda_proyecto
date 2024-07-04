@@ -20,8 +20,9 @@ $(document).ready(function () {
             // Recortar la descripción a tres líneas y agregar "Leer más..."
             var descripcionRecortada = recortarDescripcion(item.description, 100); 
             var fila = `
-            <div class="col p-2 col-sm-12 col-md-6 col-lg-4 col-xl-3 justify-content-center">
-                    <img src="${item.image}" class="card-img-top" alt="..." style="max-width: 50%; height: 200px; margin: 0 auto;">
+            <div class=" col p-2 col-sm_12 col-md-6 col-lg-4 col-xl-3">
+                <div class="card pt-3 " style="width: 18rem; padding: 5px;"> 
+                       <img src="${item.image}" class="card-img-top" alt="..." style="max-width: 50%; height: 200px; margin: 0 auto;">
                     <div class="card-body">
                         <h5 class="card-title">${item.title}</h5>
                     </div>
@@ -36,6 +37,7 @@ $(document).ready(function () {
                             <span class="index_stock">Precio: $ ${item.price}</span>
                         </li>
                     </ul>
+                </div>
             </div>
             `;
             $('#lista').append(fila);
