@@ -9,9 +9,11 @@
             <div  class="contanier-fluid bg-white py-4 pt-4 justify-content-center"style="padding: 50px; border-radius: 10px">
                 <p class="ficha_titulo">Bodega</p>
                 <div class="row">
-                    <div class="col-md-6" style="font-weight: bold;">
+                    <div class="col-md-6" style="font-weight: bold; text-align: center;">
                         {% csrf_token %}
                         {{ form|as_bootstrap_form }}
+                        <br>
+                        <button type="submit" class="btn btn-primary" > Guardar </button>
                     </div>
                     <div class="col-md-6 text-center">
                         <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
@@ -29,7 +31,8 @@
                                     <th scope="col"> Imagen </th>  
                                 </tr>
                             </thead>
-                            <tbody><!-- AREA DE FILAS DE PRODUCTOS -->
+                            <tbody>
+                                <!-- AREA DE FILAS DE PRODUCTOS -->
                                 {% for producto in productos %}
                                 <tr>
                                     <td>{{ producto.bodega_id }}</td>
