@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Asignar placeholders para ayudar a los usuarios
-  $('#id_cantidad').attr('placeholder', 'Ej: 10, agregará 10 productos en la bodega');
+  $('#id_cantidad').attr('placeholder', 'Ej: 5, agregará 5 productos en la bodega');
 
   // Cambiar el texto del combo de categoría por "Seleccione una categoría"
   var select = document.querySelector('select[name="categoria"]');
