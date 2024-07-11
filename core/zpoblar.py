@@ -88,95 +88,95 @@ def poblar_bd(test_user_email=''):
     eliminar_tablas()
 
     crear_usuario(
-        username='cevans',
+        username='Mramirez',
         tipo='Cliente', 
-        nombre='Chris', 
-        apellido='Evans', 
+        nombre='Mario', 
+        apellido='Ramirez', 
         correo=test_user_email if test_user_email else 'cevans@marvel.com', 
         es_superusuario=False, 
         es_staff=False, 
         rut='25.747.200-0',	
-        direccion='123 Main Street, Los Angeles, \nCalifornia 90001 \nEstados Unidos', 
+        direccion='Calle Patronato 300, Recoleta, Santiago ', 
         subscrito=True, 
-        imagen='perfiles/cevans.jpg')
+        imagen='perfiles/perfil4.png')
 
     crear_usuario(
-        username='eolsen',
+        username='EmyW',
         tipo='Cliente', 
-        nombre='Elizabeth', 
-        apellido='Olsen', 
+        nombre='Emily', 
+        apellido='Warner', 
         correo=test_user_email if test_user_email else 'eolsen@marvel.com', 
         es_superusuario=False, 
         es_staff=False, 
         rut='12.202.357-5', 
-        direccion='Albert Street, New York, \nNew York 10001 \nEstados Unidos', 
+        direccion='Condell 350, Providencia, Santiago', 
         subscrito=True, 
-        imagen='perfiles/eolsen.jpg')
+        imagen='perfiles/perfil3.png')
 
     crear_usuario(
-        username='tholland',
+        username='tammy',
         tipo='Cliente', 
-        nombre='Tom', 
-        apellido='Holland', 
+        nombre='Tamara', 
+        apellido='Altamirano', 
         correo=test_user_email if test_user_email else 'tholland@marvel.com', 
         es_superusuario=False, 
         es_staff=False, 
         rut='11.991.600-3', 
-        direccion='105 Apple Park Way, \nCupertino, CA 95014 \nEstados Unidos', 
+        direccion='Agustinas 555, Santiago', 
         subscrito=False, 
-        imagen='perfiles/tholland.jpg')
+        imagen='perfiles/perfil1.png')
 
     crear_usuario(
-        username='sjohansson',
+        username='susilop',
         tipo='Cliente', 
-        nombre='Scarlett', 
-        apellido='Johansson', 
+        nombre='Susana', 
+        apellido='Lopez', 
         correo=test_user_email if test_user_email else 'sjohansson@marvel.com', 
         es_superusuario=False, 
         es_staff=False, 
         rut='16.469.725-8', 
-        direccion='350 5th Ave, \nNew York, NY 10118 \nEstados Unidos', 
+        direccion='Romero 2964, Santiago', 
         subscrito=False, 
-        imagen='perfiles/sjohansson.jpg')
+        imagen='perfiles/perfil5.png')
 
     crear_usuario(
-        username='cpratt',
+        username='cristyluck',
         tipo='Administrador', 
-        nombre='Chris', 
-        apellido='Pratt', 
+        nombre='Cristina', 
+        apellido='Lucky', 
         correo=test_user_email if test_user_email else 'cpratt@marvel.com', 
         es_superusuario=False, 
         es_staff=True, 
         rut='19.441.980-5', 
-        direccion='10 Pine Road, Miami, \nFlorida 33101 \nEstados Unidos', 
+        direccion='Av. España 204, Santiago', 
         subscrito=False, 
-        imagen='perfiles/cpratt.jpg')
+        imagen='perfiles/foto_1.png')
     
     crear_usuario(
-        username='mruffalo',
+        username='marishi',
         tipo='Administrador', 
-        nombre='Mark', 
-        apellido='Ruffalo', 
+        nombre='Maria', 
+        apellido='Shin', 
         correo=test_user_email if test_user_email else 'mruffalo@marvel.com', 
         es_superusuario=False, 
         es_staff=True, 
         rut='21.708.052-5', 
-        direccion='1600 Pennsylvania Avenue NW, \nWashington, D.C. \nEstados Unidos', 
+        direccion='Av. Juan Cisterna 2920', 
         subscrito=False, 
-        imagen='perfiles/mruffalo.jpg')
+        imagen='perfiles/foto_3.png')
 
     crear_usuario(
         username='super',
         tipo='Superusuario',
-        nombre='Robert',
-        apellido='Downey Jr.',
+        nombre='Roberto',
+        apellido='Boo',
         correo=test_user_email if test_user_email else 'rdowneyjr@marvel.com',
         es_superusuario=True,
         es_staff=True,
         rut='13.029.317-4',
-        direccion='15 Oak Street, Los Angeles, \nCalifornia 90001 \nEstados Unidos',
+        direccion='La Planchada 3580, Valparaiso',
         subscrito=False,
-        imagen='perfiles/rdowneyjr.jpg')
+        imagen='perfiles/foto_2.png')
     
     categorias_data = [
         { 'id': 1, 'nombre': 'Acción'},
@@ -195,205 +195,205 @@ def poblar_bd(test_user_email=''):
         {
             'id': 1,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Grand Theft Auto V',
-            'descripcion': 'Grand Theft Auto V te sumerge en la soleada ciudad de Los Santos y sus alrededores, donde seguirás las historias entrelazadas de tres criminales muy diferentes mientras planean y ejecutan audaces atracos para sobrevivir en una ciudad despiadada. Disfruta de un mundo abierto enorme y detallado, con una gran variedad de misiones, actividades y desafíos, además de un modo online multijugador en constante evolución.',
+            'nombre': 'Alan Wake II',
+            'descripcion': 'Alan Wake, un escritor perdido y atrapado en una pesadilla más allá de nuestro mundo, escribe una oscura historia en un intento de moldear la realidad que lo rodea y escapar de su prisión. Mientras lo persigue un oscuro terror, Wake intenta mantener su cordura y vencer al diablo en su propio juego.',
             'precio': 29990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
-            'imagen': 'productos/000001.jpg'
+            'imagen': 'productos/p4.png'
         },
         {
             'id': 2,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Red Dead Redemption 2',
-            'descripcion': 'Red Dead Redemption 2 es una épica historia sobre la vida en el despiadado corazón de América. El vasto y evocador mundo del juego también proporcionará la base para una nueva experiencia multijugador online.',
+            'nombre': 'Like a Dragon Gaiden',
+            'descripcion': 'Kazuma Kiryu es un antiguo yakuza legendario que fingió su muerte y abandonó su nombre para proteger a su familia. Ahora, una persona misteriosa que intenta hacerlo salir de la clandestinidad lo ha arrastrado a un conflicto.',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
-            'imagen': 'productos/000002.jpg'
+            'imagen': 'productos/ldg.png'
         },
         {
             'id': 3,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Call of Duty: Modern Warfare II',
-            'descripcion': 'Call of Duty: Modern Warfare II es la secuela de Modern Warfare (2019) y la decimonovena entrega de la serie Call of Duty. La campaña de Modern Warfare II sigue a la Fuerza Operativa 141 mientras persiguen a un terrorista iraní llamado Hassan Zyani, quien adquirió un misil balístico estadounidense.',
+            'nombre': 'Resident Evil 4',
+            'descripcion': 'Seis años después de los eventos de Resident Evil 2, el sobreviviente de Raccoon City, Leon Kennedy, se encuentra apostado en un recóndito pueblo de Europa para investigar la desaparición de la hija del presidente de los Estados Unidos. Lo que descubre allí no se parece a nada que haya enfrentado antes.',
             'precio': 69990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
-            'imagen': 'productos/000003.jpg'
+            'imagen': 'productos/re4.png'
         },
         {
             'id': 4,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'God of War Ragnarök',
-            'descripcion': 'Únete a Kratos y Atreus en un viaje mítico por los Nueve Reinos mientras se preparan para la profetizada batalla que acabará con el mundo. En God of War Ragnarök, explorarás paisajes impresionantes y te enfrentarás a temibles enemigos, tanto dioses como monstruos, mientras buscas respuestas y aliados antes de que llegue el Ragnarök.',
+            'nombre': 'Splatoon 3',
+            'descripcion': 'Entra en batallas de 4 contra 4* en este colorido juego de acción que está lleno de estilo y actitud. Como un inkling con forma de calamar deberás desparramar tinta a tus alrededores (y a tus oponentes) usando increíbles armas y nadando a través de la tinta de tu color para sorprender a tus oponentes',
             'precio': 69990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 5,
-            'imagen': 'productos/000004.jpg'
+            'imagen': 'productos/spl3.png'
         },
         {
             'id': 5,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Doom Eternal',
-            'descripcion': 'Doom Eternal es un shooter en primera persona desarrollado por id Software y publicado por Bethesda Softworks. El juego continúa la historia de Doom (2016), y sigue al Doom Slayer en su lucha contra las fuerzas del infierno que han invadido la Tierra.',
+            'nombre': 'Wo Long Fallen Dynasty',
+            'descripcion': 'Team NINJA, el estudio que también desarrolló títulos como Ninja Gaiden, Nioh y Nioh 2, te trae una nueva obra maestra de acción que combina historia y fantasía en una experiencia caótica de los Tres Reinos como nunca antes viste. En esta visión oscura de la dinastía Han posterior, los Tres Reinos se enfrentan a amenazas humanas y demoníacas, y depende de tu soldado anónimo derrotarlos a todos.',
             'precio': 19990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 20,
-            'imagen': 'productos/000005.jpg'
+            'imagen': 'productos/wl.png'
         },
         {
             'id': 6,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Elden Ring',
-            'descripcion': 'Elden Ring es un juego de rol de acción desarrollado por FromSoftware y publicado por Bandai Namco Entertainment. El juego se desarrolla en un mundo abierto llamado las Tierras Intermedias, donde los jugadores controlan a un personaje conocido como el Sinluz, que debe viajar por el mundo para restaurar el Elden Ring, un poderoso artefacto que ha sido destruido.',
+            'nombre': 'Metroid Dread',
+            'descripcion': 'Después de investigar una misteriosa transmisión del planeta ZDR, Samus se enfrenta a un enigmático enemigo que la atrapa en este peligroso mundo. Este remoto planeta está infestado de despiadadas formas de vida alienígenas y siniestros mecanismos llamados E.M.M.I. Sé cazadora y presa a la vez mientras te abres camino a través de un peligroso mundo en la aventura más intensa de Samus hasta ahora.',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
-            'imagen': 'productos/000006.jpg'
+            'imagen': 'productos/md.png'
         },
         {
             'id': 7,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Horizon Forbidden West',
-            'descripcion': 'Horizon Forbidden West es la secuela de Horizon Zero Dawn. El juego sigue a Aloy, una joven cazadora en un mundo postapocalíptico gobernado por máquinas. En Forbidden West, Aloy debe viajar a una nueva y peligrosa frontera para investigar una misteriosa plaga que está matando la vida vegetal y animal.',
+            'nombre': 'STAR WARS Jedi: Survivor',
+            'descripcion': 'STAR WARS Jedi: Survivor retoma cinco años después de los eventos de STAR WARS Jedi: Fallen Order. Cal debe mantenerse un paso por delante de la constante persecución del Imperio mientras continúa sintiendo el peso de ser uno de los últimos Jedi que quedan en la galaxia.',
             'precio': 69990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
-            'imagen': 'productos/000007.jpg'
+            'imagen': 'productos/swjs.png'
         },
         {
             'id': 8,
             'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Spider-Man: Miles Morales',
-            'descripcion': 'Spider-Man: Miles Morales es un juego de acción y aventura desarrollado por Insomniac Games y publicado por Sony Interactive Entertainment. El juego sigue a Miles Morales, un adolescente que adquiere poderes similares a los de Spider-Man después de ser mordido por una araña genéticamente modificada.',
+            'nombre': 'Hogwarts Legacy',
+            'descripcion': 'Embárcate en un viaje por lugares nuevos y familiares mientras exploras y descubres bestias fantásticas, personalizas a tu personaje y creas pociones, dominas el lanzamiento de hechizos, mejoras tus talentos y te conviertes en la bruja o el mago que quieres ser.',
             'precio': 49990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
-            'imagen': 'productos/000008.jpg'
+            'imagen': 'productos/hl.png'
         },
         # Categoría "Aventura" (4 juegos)
         {
             'id': 9,
             'categoria': Categoria.objects.get(id=2),
-            'nombre': 'The Legend of Zelda: Breath of the Wild',
-            'descripcion': 'The Legend of Zelda: Breath of the Wild es un videojuego de acción-aventura desarrollado y publicado por Nintendo para las consolas Nintendo Switch y Wii U. El juego es la decimonovena entrega de la serie The Legend of Zelda y fue lanzado mundialmente en marzo de 2017. Breath of the Wild es un juego de mundo abierto que permite a los jugadores explorar libremente el reino de Hyrule.',
+            'nombre': 'Sonic Frontiers',
+            'descripcion': 'En busca de las esperaldas perdidas del caos, Sonic se queda varado en una isla antigua llena de criaturas inusuales. Enfrenta a hordas de poderosos enemigos mientras exploras un sobrecogedor mundo de acción, aventuras y misterio. Acelera hasta nuevas alturas y experimenta la emoción de la libertad plataformera de alta velocidad y zonas abiertas mientras corres por las cinco enormes islas de Starfall.',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
-            'imagen': 'productos/000009.jpg'
+            'imagen': 'productos/sf.png'
         },
         {
             'id': 10,
             'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Uncharted 4: A Thief\'s End',
-            'descripcion': 'Uncharted 4: A Thief\'s End es un videojuego de acción-aventura desarrollado por Naughty Dog y publicado por Sony Computer Entertainment para PlayStation 4. El juego fue lanzado en mayo de 2016 y es la cuarta entrega principal de la serie Uncharted. La historia sigue a Nathan Drake, un cazador de tesoros retirado que se ve obligado a volver a su antigua vida cuando su hermano Sam reaparece.',
+            'nombre': 'Hi-Fi RUSH',
+            'descripcion': '¡Únete al aspirante a estrella de rock Chai y su variado equipo mientras luchan contra una malvada megacorporación con combate rítmico! Hi-Fi RUSH es un juego de acción en el que el mundo se sincroniza con la música.',
             'precio': 19990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 20,
-            'imagen': 'productos/000010.jpg'
+            'imagen': 'productos/hfrush.png'
         },
         {
             'id': 11,
             'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Assassin\'s Creed Valhalla',
-            'descripcion': 'Assassin\'s Creed Valhalla es un videojuego de acción-aventura desarrollado por Ubisoft Montreal y publicado por Ubisoft. Es la duodécima entrega principal de la serie Assassin\'s Creed y la sucesora de Assassin\'s Creed Odyssey de 2018. El juego se lanzó en noviembre de 2020 para Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S y Stadia.',
+            'nombre': 'Pokemon Lengends: Arceus',
+            'descripcion': 'Prepárate para un nuevo tipo de aventura en Pokémon Legends: Arceus, que combina elementos de acción y exploración con las bases de juego de rol de la serie Pokémon. Embárcate en una serie de misiones en la antigua región de Hisui. Explora territorios llenos de naturaleza para atrapar Pokémon salvajes al observar y aprender su comportamiento, acercarte a ellos y lanzar una Poké Ball. Viaja a través de tierra, mar y cielo a lomos de un Pokémon para explorar cada rincón de la región de Hisui.',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
-            'imagen': 'productos/000011.jpg'
+            'imagen': 'productos/pla.png'
         },
         {
             'id': 12,
             'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Star Wars Jedi: Fallen Order',
-            'descripcion': 'Star Wars Jedi: Fallen Order es una emocionante aventura de acción en tercera persona ambientada en el universo de Star Wars. Ponte en la piel de Cal Kestis, un padawan que sobrevivió a la Orden 66 y debe completar su entrenamiento, desarrollar nuevas y poderosas habilidades con la Fuerza y dominar el arte del sable láser mientras te mantienes un paso por delante del Imperio y sus mortíferos Inquisidores.',
+            'nombre': 'Dead Space',
+            'descripcion': 'Isaac Clarke es un ingeniero común y corriente en una misión para reparar una enorme nave de la clase Planet Cracker, el USG Ishimura, pero descubre que ha ocurrido algo espantoso. Asesinaron a la tripulación de la nave y la amada pareja de Isaac, Nicole, se encuentra perdida en algún lugar abordo.',
             'precio': 39990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
-            'imagen': 'productos/000012.jpg'
+            'imagen': 'productos/dss.png'
         },
         # Categoría "Estrategia" (4 juegos)
         {
             'id': 13,
             'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Civilization VI',
-            'descripcion': 'Civilization VI es un juego de estrategia por turnos en el que los jugadores intentan construir un imperio que resista el paso del tiempo. Explora un nuevo mundo, investiga tecnologías, conquista a tus enemigos y enfréntate a los líderes más famosos de la historia mientras intentas construir la civilización más grande jamás conocida.',
+            'nombre': 'Pikmin 4',
+            'descripcion': 'Descubre a los Pikmin, ¡unas pequeñas criaturas de aspecto vegetal con habilidades distintivas que podrás plantar, arrancar, dirigir y utilizar para abrumar a los enemigos! Utiliza el poder diminuto de tus Pikmin (y un poco de estrategia) para explorar este misterioso planeta en busca de tu tripulación… y tesoros.',
             'precio': 39990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 5,
-            'imagen': 'productos/000013.jpg'
+            'imagen': 'productos/pp4.png'
         },
         {
             'id': 14,
             'categoria': Categoria.objects.get(id=3),
-            'nombre': 'XCOM 2',
-            'descripcion': 'XCOM 2 es la secuela del galardonado juego de estrategia XCOM: Enemy Unknown. La Tierra ha cambiado y ahora está bajo control alienígena. Como líder de XCOM, una organización militar secreta, debes reconstruir la base de operaciones, reclutar nuevos soldados y liderar la resistencia para liberar a la humanidad del yugo alienígena.',
+            'nombre': 'Minecraft Legends',
+            'descripcion': 'La corrupción de los piglins se extiende por el Mundo principal y lo abrasa todo a su paso. ¿Serás el héroe que protegerá esta noble tierra? Planifica tu estrategia y enfréntate a los piglins en batallas épicas, pero ten cuidado: recuerda que nunca se rinden. Enfréntate a las bases piglin durante el día y defiende a tus aliados por la noche. Explora exuberantes biomas repletos de tesoros y peligros, traba nuevas amistades y reúnete con criaturas conocidas. ',
             'precio': 19990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
-            'imagen': 'productos/000014.jpg'
+            'imagen': 'productos/ml.png'
         },
         {
             'id': 15,
             'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Total War: Warhammer III',
-            'descripcion': 'Total War: Warhammer III es un juego de estrategia en tiempo real y por turnos ambientado en el mundo de fantasía de Warhammer. El juego presenta cuatro razas jugables: Kislev, Cathay, Khorne y Nurgle, cada una con sus propias unidades, mecánicas y objetivos de campaña. Los jugadores pueden liderar a sus ejércitos en batallas masivas en tiempo real y gestionar sus imperios en un mapa de campaña por turnos.',
+            'nombre': 'Overcooked 2',
+            'descripcion': '¡Overcooked vuelve con un nuevo y caótico juego de cocina en acción! Regresa al Reino de la Cebolla y organiza tu equipo de chefs en un cooperativo clásico o en partidas en línea de hasta cuatro jugadores. Agarraos los delantales... es hora de salvar el mundo (¡otra vez!)',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
-            'imagen': 'productos/000015.jpg'
+            'imagen': 'productos/oc2.png'
         },
         {
             'id': 16,
             'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Age of Empires IV',
-            'descripcion': 'Age of Empires IV es un juego de estrategia en tiempo real desarrollado por Relic Entertainment y publicado por Xbox Game Studios. El juego es la cuarta entrega principal de la serie Age of Empires y fue lanzado en octubre de 2021. El juego presenta ocho civilizaciones jugables, cada una con sus propias unidades, tecnologías y edificios únicos.',
+            'nombre': 'Digimon Survive',
+            'descripcion': 'Después de perderse en un viaje escolar, Takuma Momozuka termina en un mundo habitado por enemigos feroces y nuevos aliados. Únete a Takuma y a sus amigos mientras luchan por regresar a casa. Crea tu historia en esta emocionante novela visual con un estilo de combate por turnos.',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
-            'imagen': 'productos/000016.jpg'
+            'imagen': 'productos/ds.png'
         },
         # Categoría "RPG" (4 juegos)
         {
             'id': 17,
             'categoria': Categoria.objects.get(id=4),
-            'nombre': 'The Witcher 3: Wild Hunt',
-            'descripcion': 'The Witcher 3: Wild Hunt es un juego de rol de acción de mundo abierto desarrollado y publicado por CD Projekt Red. El juego sigue a Geralt de Rivia, un cazador de monstruos profesional conocido como brujo, mientras busca a su hija adoptiva, Ciri, quien está siendo perseguida por la Cacería Salvaje, una fuerza espectral que busca usar sus poderes para sus propios fines.',
+            'nombre': 'Sea of Stars',
+            'descripcion': 'Sea of Stars promete el toque de Sabotage en todos los sistemas y viene para modernizar el género de RPG clásico en cuando al combate por turnos, narrativa, exploración e interacciones con el entorno se refiere, pues ofrece al mismo tiempo una generosa ración de nostalgia y diversión sencilla, de la de toda la vida.',
             'precio': 29990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 10,
-            'imagen': 'productos/000017.jpg'
+            'imagen': 'productos/ss.png'
         },
         {
             'id': 18,
             'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Final Fantasy VII Remake',
-            'descripcion': 'Final Fantasy VII Remake es una reimaginación del clásico juego de rol de 1997. El juego sigue a Cloud Strife, un ex-SOLDADO que se une a un grupo eco-terrorista llamado AVALANCHE para luchar contra la megacorporación Shinra, que está drenando la energía vital del planeta.',
+            'nombre': 'Fire Emblem Engage',
+            'descripcion': 'En una guerra en contra del Dragón Caído, cuatro reinos trabajaron junto a héroes de otros mundos para atrapar a esta malvada amenaza. Mil años después, el sello que lo mantenía atrapado se ha debilitado y el Dragón Caído ha despertado. Como un Dragón Divino, usa sofisticadas estrategias y abundantes opciones de personalización para consumar tu destino: reunir los anillos Emblema dispersados a través del mundo y regresar la paz al continente de Elyos.',
             'precio': 59990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 5,
-            'imagen': 'productos/000018.jpg'
+            'imagen': 'productos/fee.png'
         },
         {
             'id': 19,
             'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Cyberpunk 2077',
-            'descripcion': 'Cyberpunk 2077 es un juego de rol de acción de mundo abierto desarrollado y publicado por CD Projekt Red. El juego se desarrolla en Night City, una megaciudad futurista obsesionada con el poder, el glamour y la modificación corporal. Los jugadores asumen el papel de V, un mercenario que puede ser personalizado en términos de género, apariencia y trasfondo.',
+            'nombre': 'Shin Megami Tensei V: Vengeance',
+            'descripcion': 'Cuando una macabra escena de asesinato en el Tokio actual bloquea el camino a casa de nuestro protagonista, un desvío imprevisto lo deja inconsciente. Se despierta en una ciudad de Tokio nueva, un yermo devastado por el apocalipsis llamado Da’at… Pero antes de que unos demonios sanguinarios reclamen su vida, aparece un salvador y ambos se convertirán en un poderoso ser que no es ni demonio ni humano, sino un Nahobino.',
             'precio': 39990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 15,
-            'imagen': 'productos/000019.jpg'
+            'imagen': 'productos/smtvv.png'
         },
         {
             'id': 20,
             'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Diablo IV',
-            'descripcion': 'Diablo IV es un juego de rol de acción de mazmorras desarrollado y publicado por Blizzard Entertainment. Es la cuarta entrega principal de la serie Diablo y fue lanzado en junio de 2023. El juego se desarrolla en un mundo oscuro y gótico llamado Santuario, donde los jugadores luchan contra las fuerzas del infierno.',
+            'nombre': 'Baldurs Gate 3',
+            'descripcion': 'LA EXPERIENCIA D&D DEFINITIVA. Elige entre una amplia selección de razas y clases de D&D, o bien juega con un personaje con origen que dispondrá de un detallado trasfondo. Vive aventuras, saquea, combate y enamórate en tus viajes por los Reinos Olvidados y más allá. Juega en solitario o ve en un grupo de hasta cuatro, en el modo multijugador, pero ¡elige bien a tus compañeros!',
             'precio': 69990,
             'descuento_subscriptor': 5,
             'descuento_oferta': 0,
-            'imagen': 'productos/000020.jpg'
+            'imagen': 'productos/bg3.png'
         }
     ]
 
